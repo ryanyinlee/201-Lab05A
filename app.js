@@ -147,12 +147,39 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+let dynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    let runTime = dynamicArray.length;
+    let total = 0;
+    let i = 0; //loop counter
+
+    // gives us the dynamic counter for the loop based on arraylength (ends up being 5 for example)
+    //while (runTime > 0) 
+    while (i < runTime) { //want to multiply the entire array. Start from the rear?
+
+
+        let mult = multiply(dynamicArray[i], dynamicArray[i+1]);
+        
+        console.log("The current num in the array is:" + i); // first loop: 0
+        i++; // now will be 1
+        let secondMult = multiply(mult[0], dynamicArray[i+1]);
+
+
+
+        total = total + secondMult; //store the sum? Total is 2 on first loop.
+        
+        // console.log("Runtime is " + runningMult);
+        // console.log("mult is " + mult[0]);
+        //runTime--; //remove from the counter
+        console.log("The total should be " + total);
+    }
+
+    //let runningMult = mult[0];
 
 }
 
+//
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
 
