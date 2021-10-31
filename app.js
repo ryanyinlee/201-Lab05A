@@ -150,35 +150,52 @@ Test this function by hand in the console to get it working, and when you think 
 let dynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-    let runTime = dynamicArray.length;
-    let total = 0;
-    let i = 0; //loop counter
+    
+     
+    let totalMult = 0; // the portion of the array to be multiplied
+ 
+    let totalMultAgain = 0; // add to this to find the total.
+   
 
     // gives us the dynamic counter for the loop based on arraylength (ends up being 5 for example)
     //while (runTime > 0) 
-    while (i < runTime) { //want to multiply the entire array. Start from the rear?
+    
+    
+    for (let i = 0; i < dynamicArray.length; i++) { //want to multiply the entire array
+        //  1*2*3*4*5
+
+        /* multiply(a,b) {}
+            let multiples = a * b;
+            return [multiples, "The product of 5 and 9 is 45."]; } */
+        let firstMult = multiply(dynamicArray[i], dynamicArray[i+1]); // 1 * 2
+        totalMult = totalMult + firstMult[0];
+        let secondMult = multiply(totalMult, dynamicArray[i+2]);
+        totalMultAgain = totalMultAgain + secondMult[0];
+       
+        console.log("firstMult is " + totalMult);
+        console.log("secondMult is " + totalMultAgain);
+        
+        }
+    
+               
+    
+}
 
 
-        let mult = multiply(dynamicArray[i], dynamicArray[i+1]);
+/*  let multResult = multiply(dynamicArray[i], dynamicArray[i+1]);
+        //multResult[0] should be 2 We now want to multiply this by 3 on the next loop.
         
         console.log("The current num in the array is:" + i); // first loop: 0
-        i++; // now will be 1
-        let secondMult = multiply(mult[0], dynamicArray[i+1]);
-
-
-
-        total = total + secondMult; //store the sum? Total is 2 on first loop.
+       
+        
+        total = total + multResult[0]; //store the sum? Total is 2 on first loop.
         
         // console.log("Runtime is " + runningMult);
         // console.log("mult is " + mult[0]);
         //runTime--; //remove from the counter
         console.log("The total should be " + total);
-    }
 
-    //let runningMult = mult[0];
-
-}
-
+        i+=2; // now will be 2 */
 //
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
