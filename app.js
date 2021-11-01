@@ -67,8 +67,11 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
 
     //console.log(threeSum[0], threePly[0]);    
     // return twoSum;
+
+    // Third element: "4 and 7 and 5 sum to 16."
+// Fourth element: "The product of 4 and 7 and 5 is 140."
    
-    return [threeSum[0], threePly[0], "4 and 7 and 5 sum to 16.", "The product of 4 and 7 and 5 is 140."];
+    return [threeSum[0], threePly[0], a + " and " + b + " and " + c + " sum to " + threeSum[0] + ".", "The product of " + a + " and " + b + " and " + c + " is " + threePly[0] + "."];
 
     
 }
